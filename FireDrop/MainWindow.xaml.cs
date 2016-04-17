@@ -25,5 +25,15 @@ namespace FireDrop
         {
             InitializeComponent();
         }
+
+        private void ShareBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReceiveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
