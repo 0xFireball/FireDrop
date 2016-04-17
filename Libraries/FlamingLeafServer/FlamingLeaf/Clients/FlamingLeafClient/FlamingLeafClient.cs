@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using FlamingLeafToolkit;
 using Newtonsoft.Json;
 using OmniBean.PowerCrypt4.Utilities;
@@ -134,5 +135,10 @@ namespace FlamingLeafClient
         public event EventHandler DataReceived;
 
         #endregion Public Events
+
+        public async void EstablishConnectionAsync()
+        {
+            await Task.Run(() => EstablishConnection());
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace FireDrop
 {
     class TextMessage : INotifyPropertyChanged
     {
-        private string _messageText;
+        private string _messageText = "";
 
         public string MessageText
         {

@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
+using MahApps.Metro.Controls;
 using Point = System.Windows.Point;
 
 namespace FireDrop

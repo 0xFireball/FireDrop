@@ -161,6 +161,10 @@
       <Project>{ce04d96c-8e09-4093-a204-59629fcc2d53}</Project>
       <Name>FlamingLeafToolkit</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Libraries\FlamingLeafServer\FlamingLeaf\Clients\FlamingLeafClient\FlamingLeafClient.csproj">
+      <Project>{3b66e7f7-580c-452f-b48c-f21b6795b9c5}</Project>
+      <Name>FlamingLeafClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Libraries\FlamingLeafServer\FlamingLeaf\FlamingLeafServer\FlamingLeafServer.csproj">
       <Project>{dcad0d80-f016-481a-87ea-5f6020909b90}</Project>
       <Name>FlamingLeafServer</Name>

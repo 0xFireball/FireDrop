@@ -1,4 +1,6 @@
-﻿namespace FireDrop.Models
+﻿using System;
+
+namespace FireDrop.Models
 {
     internal class ReceiveFileModel
     {
@@ -11,7 +13,12 @@
 
         public void StartReceiving(string receiveIp)
         {
+            _fireDropBeacon.ConnectToServer(receiveIp);
+        }
 
+        public void StopReceiving()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
