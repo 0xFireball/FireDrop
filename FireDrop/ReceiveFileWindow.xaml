@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:FireDrop"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
+        Icon="/img/icon.ico"
         WindowStartupLocation="CenterOwner"
         Title="FireDrop" Height="480" Width="360" ResizeMode="NoResize">
     <Grid>
-        
+
     </Grid>
 </controls:MetroWindow>
 

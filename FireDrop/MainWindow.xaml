@@ -9,6 +9,7 @@
         Title="FireDrop" Height="480" Width="360" ResizeMode="NoResize"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
+        Icon="/img/icon.ico"
         FontFamily="Roboto">
     <Window.DataContext>
         <local:ApplicationViewModel></local:ApplicationViewModel>
