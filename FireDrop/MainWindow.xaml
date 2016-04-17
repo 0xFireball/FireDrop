@@ -12,10 +12,10 @@
         FontFamily="Roboto">
     <Grid>
         <Image Width="200" Height="200" Margin="77,41,76.6,209.4" Source="/img/share.png"></Image>
-        <TextBlock x:Name="textBlock" Margin="104,241,108.6,0" TextWrapping="Wrap" Text="FireDrop" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32" FontFamily="Roboto" Width="141" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock" Margin="104,241,108.6,0" TextWrapping="Wrap" Text="FireDrop" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32" FontFamily="Roboto" Width="141" FontWeight="Bold" />
         <TextBlock FontFamily="Roboto" Text="(c) 2016, 0xFireball" Margin="10,420,236.6,10.4"></TextBlock>
-        <Button x:Name="ShareBtn" Content="Share" Margin="35,305,35.6,0" VerticalAlignment="Top" Height="46" Background="#FF2267B1" Foreground="White" Click="ShareBtn_Click"/>
-        <Button x:Name="ReceiveBtn" Content="Receive" Margin="35,356,35.6,0" VerticalAlignment="Top" Height="46" Click="ReceiveBtn_Click"/>
-        <TextBlock FontFamily="Roboto" Text="v0.6" Margin="317,420,10.6,10.4"/>
+        <Button x:Name="ShareBtn" Content="Share" Margin="35,305,35.6,0" VerticalAlignment="Top" Height="46" Background="#FF2267B1" Foreground="White" />
+        <Button x:Name="ReceiveBtn" Content="Receive" Margin="35,356,35.6,0" VerticalAlignment="Top" Height="46" />
+        <TextBlock FontFamily="Roboto" Text="v0.6" Margin="317,420,10.6,10.4" />
     </Grid>
 </controls:MetroWindow>
