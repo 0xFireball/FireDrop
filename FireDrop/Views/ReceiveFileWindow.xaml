@@ -5,9 +5,25 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:local="clr-namespace:FireDrop"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:viewModels="clr-namespace:FireDrop.ViewModels"
                       mc:Ignorable="d"
                       Icon="/img/icon.ico"
                       WindowStartupLocation="CenterOwner"
                       Title="FireDrop" Height="480" Width="360" ResizeMode="NoResize">
-    <Grid />
+    <Window.DataContext>
+        <viewModels:ReceiveFileViewModel></viewModels:ReceiveFileViewModel>
+    </Window.DataContext>
+    <Grid>
+        <TextBlock x:Name="textBlock" Margin="14,20,19.6,0" TextWrapping="Wrap" Text="Receive File"
+                   TextAlignment="Center" VerticalAlignment="Top" FontSize="32"
+                   FontFamily="Roboto" FontWeight="Bold" />
+        <TextBlock x:Name="receiveTextBlock" Margin="50,245,53.6,0" TextWrapping="Wrap" Text="Share Host Address"
+        	TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16"
+        	FontFamily="Roboto" Width="250" />
+        <TextBox Margin="35,271,35.6,133.4" Height="46" Text="{Binding ReceiveIP.MessageText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21.333" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        <Button x:Name="ReceiveBtn" Content="Receive" Margin="35,322,35.6,0" VerticalAlignment="Top" Height="46"
+        	Background="#FF0A8389" Foreground="White" Command="{Binding ReceiveFileCommand}" />
+        <Button x:Name="CancelReceiveBtn" Content="Cancel" Margin="35,373,35.6,0" VerticalAlignment="Top" Height="46"
+        	Background="#FFE70505" Foreground="White" Command="{Binding CancelReceiveCommand}" />
+    </Grid>
 </controls:MetroWindow>

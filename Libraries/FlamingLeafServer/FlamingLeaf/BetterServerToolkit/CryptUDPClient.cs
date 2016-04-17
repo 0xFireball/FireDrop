@@ -46,6 +46,11 @@ namespace FlamingLeafToolkit
             get { return _rsaProvider.PublicKey; }
         }
 
+        public UdpClient Client
+        {
+            get { return _udpClient; }
+        }
+
         private void DoNormalInit()
         {
             _sessionKeyDict = new Dictionary<string, string>();
@@ -118,6 +123,11 @@ namespace FlamingLeafToolkit
         {
             //byte[] rawData = _udpClient.Receive(ref remoteEP);
             return _rsaProvider.DecryptStringWithPrivateKey(encryptedBytes.GetString()).GetBytes();
+        }
+
+        public void Close()
+        {
+            _udpClient.Close();
         }
     }
 }

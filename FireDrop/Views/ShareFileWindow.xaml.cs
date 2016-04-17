@@ -1,4 +1,7 @@
-﻿namespace FireDrop
+﻿using System.ComponentModel;
+using FireDrop.ViewModels;
+
+namespace FireDrop
 {
     /// <summary>
     ///     Interaction logic for ShareFileWindow.xaml
@@ -8,6 +11,11 @@
         public ShareFileWindow()
         {
             InitializeComponent();
+        }
+
+        private void ShareFileWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            (this.DataContext as ShareFileViewModel).EmergencyKill();
         }
     }
 }

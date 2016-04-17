@@ -10,6 +10,7 @@
                       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                       Background="{DynamicResource MaterialDesignPaper}"
                       Icon="/img/icon.ico"
+                      Closing="MainWindow_OnClosing"
                       FontFamily="Roboto">
     <Window.DataContext>
         <local:ApplicationViewModel />

@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\MahApps.Metro.1.3.0-ALPHA126\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -78,7 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ReceiveFileModel.cs" />
     <Compile Include="Models\ShareFileModel.cs" />
+    <Compile Include="TextMessage.cs" />
+    <Compile Include="ViewModels\ReceiveFileViewModel.cs" />
     <Compile Include="ViewModels\ShareFileViewModel.cs" />
     <Compile Include="Views\ReceiveFileWindow.xaml.cs">
       <DependentUpon>ReceiveFileWindow.xaml</DependentUpon>
@@ -90,7 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Tools\AirDropper.cs" />
+    <Compile Include="Tools\FireDropBeacon.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -151,6 +155,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\FlamingLeafServer\FlamingLeaf\BetterServerToolkit\FlamingLeafToolkit.csproj">
+      <Project>{ce04d96c-8e09-4093-a204-59629fcc2d53}</Project>
+      <Name>FlamingLeafToolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\FlamingLeafServer\FlamingLeaf\FlamingLeafServer\FlamingLeafServer.csproj">
+      <Project>{dcad0d80-f016-481a-87ea-5f6020909b90}</Project>
+      <Name>FlamingLeafServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\FlamingLeafServer\FlamingLeaf\PluginCore2\Aluminum.PluginCore2.csproj">
+      <Project>{d9ea6332-3798-468d-832f-ebb9af36d229}</Project>
+      <Name>Aluminum.PluginCore2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,17 +9,24 @@
                       mc:Ignorable="d"
                       Icon="/img/icon.ico"
                       WindowStartupLocation="CenterOwner"
+                      Closing="ShareFileWindow_OnClosing"
                       Title="FireDrop" Height="480" Width="360" ResizeMode="NoResize">
     <Window.DataContext>
         <viewModels:ShareFileViewModel />
     </Window.DataContext>
     <Grid>
-        <TextBlock x:Name="textBlock" Margin="104,20,108.6,0" TextWrapping="Wrap" Text="Share File"
-                   TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32"
-                   FontFamily="Roboto" Width="250" FontWeight="Bold" />
+        <TextBlock x:Name="textBlock" Margin="50,20,53.6,0" TextWrapping="Wrap" Text="Share File"
+                   TextAlignment="Center" VerticalAlignment="Top" FontSize="32"
+                   FontFamily="Roboto" FontWeight="Bold" />
         <Button x:Name="SelectFileBtn" Content="Select File" Margin="35,100,35.6,0" VerticalAlignment="Top" Height="46"
                 Background="#FF2267B1" Foreground="White" Command="{Binding SelectFileCommand}" />
-        <Button x:Name="ShareBtn" Content="Share" Margin="35,384,35.6,0" VerticalAlignment="Top" Height="46"
-        	Background="#FF22B1A4" Foreground="White" Command="{Binding ShareFileCommand}" />
+        <TextBlock x:Name="shareTextBlock" Margin="50,245,53.6,0" TextWrapping="Wrap" Text="Share Address"
+        	TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16"
+        	FontFamily="Roboto" Width="250" />
+        <TextBox Margin="35,271,35.6,133.4" Height="46" Text="{Binding ShareIP.MessageText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" FontSize="21.333" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        <Button x:Name="ShareBtn" Content="Share" Margin="35,322,35.6,0" VerticalAlignment="Top" Height="46"
+        	Background="#FF0A8389" Foreground="White" Command="{Binding ShareFileCommand}" />
+        <Button x:Name="CancelShareBtn" Content="Cancel" Margin="35,373,35.6,0" VerticalAlignment="Top" Height="46"
+        	Background="#FFE70505" Foreground="White" Command="{Binding CancelShareCommand}" />
     </Grid>
 </controls:MetroWindow>
