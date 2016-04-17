@@ -5,27 +5,40 @@ namespace FireDrop
 {
     public class DelegateCommand : ICommand
     {
-        private readonly Action _action;
+        private readonly Predicate<object> _canExecute;
+        private readonly Action<object> _execute;
 
-        public DelegateCommand(Action action)
+        public DelegateCommand(Action<object> execute)
+                       : this(execute, null)
         {
-            _action = action;
         }
 
-        public void Execute(object parameter)
+        public DelegateCommand(Action<object> execute,
+                       Predicate<object> canExecute)
         {
-            _action();
+            _execute = execute;
+            _canExecute = canExecute;
         }
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            if (_canExecute == null)
+            {
+                return true;
+            }
+
+            return _canExecute(parameter);
         }
 
-#pragma warning disable 67
+        public void Execute(object parameter)
+        {
+            _execute(parameter);
+        }
 
-        public event EventHandler CanExecuteChanged;
-
-#pragma warning restore 67
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
     }
 }

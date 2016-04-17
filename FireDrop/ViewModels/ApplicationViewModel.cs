@@ -4,21 +4,20 @@ namespace FireDrop
 {
     internal class ApplicationViewModel : ObservableObject
     {
-        public IView View { get; set; }
         public ICommand SwitchPageShareFileCommand => new DelegateCommand(ShareFile);
 
         public ICommand SwitchPageReceiveFileCommand => new DelegateCommand(ReceiveFile);
 
-        private void ReceiveFile()
+        private void ReceiveFile(object o)
         {
-            ReceiveFileWindow receiveFileWindow = new ReceiveFileWindow();
+            var receiveFileWindow = new ReceiveFileWindow();
             receiveFileWindow.Owner = View.WindowHandle;
             receiveFileWindow.ShowDialog();
         }
 
-        private void ShareFile()
+        private void ShareFile(object o)
         {
-            ShareFileWindow shareFileWindow = new ShareFileWindow();
+            var shareFileWindow = new ShareFileWindow();
             shareFileWindow.Owner = View.WindowHandle;
             shareFileWindow.ShowDialog();
         }

@@ -1,0 +1,25 @@
+﻿<controls:MetroWindow x:Class="FireDrop.ShareFileWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:local="clr-namespace:FireDrop"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:viewModels="clr-namespace:FireDrop.ViewModels"
+                      mc:Ignorable="d"
+                      Icon="/img/icon.ico"
+                      WindowStartupLocation="CenterOwner"
+                      Title="FireDrop" Height="480" Width="360" ResizeMode="NoResize">
+    <Window.DataContext>
+        <viewModels:ShareFileViewModel />
+    </Window.DataContext>
+    <Grid>
+        <TextBlock x:Name="textBlock" Margin="104,20,108.6,0" TextWrapping="Wrap" Text="Share File"
+                   TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32"
+                   FontFamily="Roboto" Width="250" FontWeight="Bold" />
+        <Button x:Name="SelectFileBtn" Content="Select File" Margin="35,100,35.6,0" VerticalAlignment="Top" Height="46"
+                Background="#FF2267B1" Foreground="White" Command="{Binding SelectFileCommand}" />
+        <Button x:Name="ShareBtn" Content="Share" Margin="35,384,35.6,0" VerticalAlignment="Top" Height="46"
+        	Background="#FF22B1A4" Foreground="White" Command="{Binding ShareFileCommand}" />
+    </Grid>
+</controls:MetroWindow>
